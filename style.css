@@ -1,0 +1,85 @@
+/* General body styling */
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    min-height: 100vh;
+}
+
+body {
+    background: linear-gradient(135deg, #62666b, #343332);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.card {
+    border: none;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+
+.card {
+    background: linear-gradient(135deg, #959ea9, #c1a992);
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Card styling */
+.card {
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Buttons */
+.btn {
+    background: linear-gradient(135deg, #62666b, #343332);
+    border-radius: 8px;
+    font-weight: 500;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.btn:hover {
+    transform: scale(1.02);
+}
+
+/* Navbar */
+.navbar {
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* Alerts */
+.alert {
+    border-radius: 8px;
+    font-size: 0.95rem;
+}
+
+/* Form inputs */
+.form-control {
+    border-radius: 8px;
+    padding: 10px;
+}
+
+.form-control:focus {
+    border-color: #0d6efd;
+    box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, .25);
+}
+
+/* Dashboard quick links */
+.list-group-item a {
+    text-decoration: none;
+    color: #0d6efd;
+    transition: color 0.2s ease;
+}
+
+.list-group-item a:hover {
+    color: #084298;
+    font-weight: 500;
+}
