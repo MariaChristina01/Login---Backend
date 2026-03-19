@@ -62,8 +62,58 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta charset="UTF-8">
     <title>Edit User</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="style.css" rel="stylesheet">
+    
 </head>
+<style>
+    body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    min-height: 100vh;
+}
+
+body {
+    background: linear-gradient(135deg, #62666b, #343332);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn {
+    background: linear-gradient(135deg, #62666b, #343332);
+    border-radius: 8px;
+    font-weight: 500;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+.card {
+    border: none;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+
+.card {
+    background: linear-gradient(135deg, #959ea9, #c1a992);
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Card styling */
+.card {
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+/* Form inputs */
+.form-control {
+    border-radius: 8px;
+    padding: 10px;
+}
+
+.form-control:focus {
+    border-color: #0d6efd;
+    box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, .25);
+}
+</style>
 <body>
 
 <div class="container mt-5">
@@ -92,8 +142,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <input type="email" name="email" class="form-control"
                        value="<?php echo htmlspecialchars($user['email']); ?>" required>
             </div>
-            <button type="submit" class="btn btn-primary w-100">Save Changes</button>
-            <a href="dashboard.php" class="btn btn-secondary w-100 mt-2">Cancel</a>
+            <button type="submit" class="btn btn-outline-secondary w-100">Save Changes</button>
+            <a href="dashboard.php" class="btn btn-outline-secondary w-100 mt-2">Cancel</a>
         </form>
     </div>
 </div>

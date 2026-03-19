@@ -145,6 +145,57 @@ body {
     from { opacity: 0; transform: translate(-50%, -20px); }
     to   { opacity: 1; transform: translate(-50%, 0); }
 }
+
+/* Buttons */
+.btn {
+    background: linear-gradient(135deg, #62666b, #343332);
+    border-radius: 8px;
+    font-weight: 500;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.btn:hover {
+    transform: scale(1.02);
+}
+
+/* Navbar */
+.navbar {
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* Alerts */
+.alert {
+    border-radius: 8px;
+    font-size: 0.95rem;
+}
+
+/* Form inputs */
+.form-control {
+    border-radius: 8px;
+    padding: 10px;
+}
+
+.form-control:focus {
+    border-color: #0d6efd;
+    box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, .25);
+}
+
+/* Dashboard quick links */
+.list-group-item a {
+    text-decoration: none;
+    color: #0d6efd;
+    transition: color 0.2s ease;
+}
+
+.list-group-item a:hover {
+    color: #084298;
+    font-weight: 500;
+}
 </style>
 <body>
 
@@ -244,7 +295,7 @@ body {
 
 <?php if (isset($_GET['updated'])): ?>
     <div id="popMessage" class="alert alert-success text-center pop-message">
-        ✅ User updated successfully!
+        User updated successfully!
     </div>
 <?php endif; ?>
  <script>

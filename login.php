@@ -57,8 +57,48 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <title>Login</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+ 
 </head>
+<style> 
+    body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    min-height: 100vh;
+}
+
+body {
+    background: linear-gradient(135deg, #62666b, #343332);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn {
+    background: linear-gradient(135deg, #62666b, #343332);
+    border-radius: 8px;
+    font-weight: 500;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+.card {
+    border: none;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+
+.card {
+    background: linear-gradient(135deg, #959ea9, #c1a992);
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Card styling */
+.card {
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+</style>
 <body class="bg-light d-flex justify-content-center align-items-center vh-100">
 
     <div class="card shadow p-4" style="width: 400px;">
@@ -84,7 +124,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 </label>
             </div>
 
-            <button type="submit" class="btn btn-primary w-100">Login</button>
+            <button type="submit" class="btn btn-outline-secondary w-100">Login</button>
         </form>
         <div class="text-center mt-3">
             <small>Don’t have an account? <a href="signup.php">Sign up here</a></small>
