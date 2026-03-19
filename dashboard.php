@@ -145,15 +145,6 @@ body {
     from { opacity: 0; transform: translate(-50%, -20px); }
     to   { opacity: 1; transform: translate(-50%, 0); }
 }
-
-/* Buttons */
-.btn {
-    background: linear-gradient(135deg, #62666b, #343332);
-    border-radius: 8px;
-    font-weight: 500;
-    transition: background-color 0.2s ease, transform 0.1s ease;
-}
-
 .btn:hover {
     transform: scale(1.02);
 }
@@ -202,7 +193,7 @@ body {
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-gradient">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Dashboard</a>
+            <a class="navbar-brand" href="dashboard.php">Dashboard</a>
             <div class="d-flex">
                 <a href="logout.php" class="btn btn-outline-light btn-sm">Logout</a>
             </div>
