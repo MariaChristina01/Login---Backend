@@ -27,13 +27,12 @@ $message = "";
 // Handle form submission
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $firstname  = $_POST['firstname'];
-    $middlename = $_POST['middlename'];
     $lastname   = $_POST['lastname'];
     $email      = $_POST['email'];
 
-    $sql = "UPDATE users SET firstname=?, middlename=?, lastname=?, email=? WHERE id=?";
+    $sql = "UPDATE users SET firstname=?, lastname=?, email=? WHERE id=?";
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param("ssssi", $firstname, $middlename, $lastname, $email, $id);
+    $stmt->bind_param("ssssi", $firstname, $lastname, $email, $id);
 
     if ($stmt->execute()) {
         $message = "<div class='alert alert-success text-center'>✅ User updated successfully!</div> ";

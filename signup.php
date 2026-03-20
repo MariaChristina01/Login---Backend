@@ -14,21 +14,20 @@ if ($conn->connect_error) {
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $firstname  = $_POST['firstname'];
-    $middlename = $_POST['middlename'];
     $lastname   = $_POST['lastname'];
     $email      = $_POST['email'];
     $password   = $_POST['password'];
 
     $hashed_pass = password_hash($password, PASSWORD_DEFAULT);
 
-    $sql = "INSERT INTO users (firstname, middlename, lastname, email, password) VALUES (?, ?, ?, ?, ?)";
+    $sql = "INSERT INTO users (firstname, lastname, email, password) VALUES (?, ?, ?, ?)";
     $stmt = $conn->prepare($sql);
 
     if ($stmt === false) {
         die("SQL error: " . $conn->error);
     }
 
-    $stmt->bind_param("sssss", $firstname, $middlename, $lastname, $email, $hashed_pass);
+    $stmt->bind_param("ssss", $firstname, $lastname, $email, $hashed_pass);
 
   // Check if email already exists
 $check = $conn->prepare("SELECT id FROM users WHERE email = ?");
@@ -128,35 +127,51 @@ body {
 </style>
 <body class="bg-light d-flex justify-content-center align-items-center vh-100">
 
-    <div class="card shadow p-4" style="width: 400px;">
-        <h3 class="text-center mb-3">Create Account</h3>
-        <form method="POST" action="signup.php">
-            <div class="mb-3">
-                <label class="form-label">First Name</label>
-                <input type="text" name="firstname" class="form-control" required>
-            </div>
-            <div class="mb-3">
-                <label class="form-label">Middle Name</label>
-                <input type="text" name="middlename" class="form-control">
-            </div>
-            <div class="mb-3">
-                <label class="form-label">Last Name</label>
-                <input type="text" name="lastname" class="form-control" required>
-            </div>
-            <div class="mb-3">
-                <label class="form-label">Email Address</label>
-                <input type="email" name="email" class="form-control" required>
-            </div>
-            <div class="mb-3">
-                <label class="form-label">Password</label>
-                <input type="password" name="password" class="form-control" required>
-            </div>
-            <button type="submit" class="btn btn-outline-secondary w-100">Sign Up</button>
-        </form>
-        <div class="text-center mt-3">
-            <small>Already have an account? <a href="login.php">Login here</a></small>
+    <div class="container d-flex justify-content-center align-items-center vh-100">
+  <div class="card shadow p-4" style="width: 600px;">
+    <h3 class="text-center mb-4">Create Your Account</h3>
+
+    <form method="POST" action="signup.php">
+      <!-- Row 1: First + Last Name -->
+      <div class="row mb-3">
+        <div class="col">
+          <label class="form-label">First Name</label>
+          <input type="text" name="firstname" class="form-control" required>
         </div>
-    </div>
+        <div class="col">
+          <label class="form-label">Last Name</label>
+          <input type="text" name="lastname" class="form-control" required>
+        </div>
+      </div>
+
+      <!-- Row 2: Email -->
+      <div class="row mb-3">
+        <div class="col">
+          <label class="form-label">Email Address</label>
+          <input type="email" name="email" class="form-control" required>
+        </div>
+      </div>
+
+      <!-- Row 3: Password + Confirm Password -->
+      <div class="row mb-3">
+        <div class="col">
+          <label class="form-label">Password</label>
+          <input type="password" name="password" class="form-control" required>
+        </div>
+        <div class="col">
+          <label class="form-label">Confirm Password</label>
+          <input type="password" name="confirm_password" class="form-control" required>
+        </div>
+      </div>
+
+      <!-- Actions -->
+      <button type="submit" class="btn btn-primary w-100">Sign Up</button>
+      <p class="text-center mt-3">
+        Already have an account? <a href="login.php">Log in</a>
+      </p>
+    </form>
+  </div>
+</div>
 
      <script>
 document.addEventListener("DOMContentLoaded", function() {

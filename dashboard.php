@@ -17,7 +17,7 @@ if ($conn->connect_error) {
 }
 
 // Run query safely
-$sql = "SELECT id, firstname, middlename, lastname, email FROM users";
+$sql = "SELECT id, firstname, lastname, email FROM users";
 $result = $conn->query($sql);
 
 if ($result === false) {
@@ -255,7 +255,6 @@ body {
             <tr>
                 <th>ID</th>
                 <th>First Name</th>
-                <th>Middle Name</th>
                 <th>Last Name</th>
                 <th>Email</th>
                 <th>Actions</th>
@@ -267,7 +266,6 @@ body {
                     <tr>
                         <td><?php echo $row['id']; ?></td>
                         <td><?php echo htmlspecialchars($row['firstname']); ?></td>
-                        <td><?php echo htmlspecialchars($row['middlename']); ?></td>
                         <td><?php echo htmlspecialchars($row['lastname']); ?></td>
                         <td><?php echo htmlspecialchars($row['email']); ?></td>
                         <td>
